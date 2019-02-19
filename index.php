@@ -1,6 +1,41 @@
 <?php
 include('inc/combi.php');
 use JasonGrimes\Paginator;
+?>
+
+<?php
+//////////////////////virgin => pagination
+//pagination on compter le nombre d'éléments
+//et on va chercher les articles que l'on a besoin
+
+//ok
+//// le 5 corrsepond au bre d'image qui s'affichera
+// $itemsPerPage = 5;
+// $urlPattern = '?page=(:num)';
+// $totalItems = countArticles();
+// $currentPage = 1;
+// $offset = 0;
+// if (!empty($_GET['page'])) {
+//   $currentPage = $_GET['page'];
+//   $offset = ($currentPage - 1) * $itemsPerPage;
+// }
+//
+// $sql = "SELECT * FROM articles
+//         ORDER BY created_at DESC
+//         LIMIT $itemsPerPage OFFSET $offset";
+//
+//         $query = $pdo->prepare($sql);
+//         $query->execute();
+//         $articles = $query->fetchAll();
+//         // debug($articles);
+//
+//
+//
+// // $currentPage = 8;
+
+
+// $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
+
 
 ////////// jeff=> chercher dans BDD tous les ID de movies_full
 $success = false;
@@ -40,48 +75,7 @@ include('inc/header.php');?>
   </div>
 </section>
 
-
-
-
-<?php
-//////////////////////virgin => pagination
-//pagination on compter le nombre d'éléments
-//et on va chercher les articles que l'on a besoin
-
-
-//ok
-//// le 5 corrsepond au bre d'image qui s'affichera
-$itemsPerPage = 5;
-$urlPattern = '?page=(:num)';
-$totalItems = countArticles();
-$currentPage = 1;
-$offset = 0;
-if (!empty($_GET['page'])) {
-  $currentPage = $_GET['page'];
-  $offset = ($currentPage - 1) * $itemsPerPage;
-}
-
-$sql = "SELECT * FROM articles
-        ORDER BY created_at DESC
-        LIMIT $itemsPerPage OFFSET $offset";
-
-        $query = $pdo->prepare($sql);
-        $query->execute();
-        $articles = $query->fetchAll();
-        // debug($articles);
-
-
-
-// $currentPage = 8;
-
-
-$paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
- ?>
-
-
-
-
-<?php echo $paginator; ?>
+<!-- <?php echo $paginator; ?> -->
 
 
 
