@@ -1,11 +1,47 @@
 <?php
 include('inc/combi.php');
 use JasonGrimes\Paginator;
+?>
+
+<?php
+//////////////////////virgin => pagination
+//pagination on compter le nombre d'éléments
+//et on va chercher les articles que l'on a besoin
+
+//ok
+//// le 5 corrsepond au bre d'image qui s'affichera
+// $itemsPerPage = 5;
+// $urlPattern = '?page=(:num)';
+// $totalItems = countArticles();
+// $currentPage = 1;
+// $offset = 0;
+// if (!empty($_GET['page'])) {
+//   $currentPage = $_GET['page'];
+//   $offset = ($currentPage - 1) * $itemsPerPage;
+// }
+//
+// $sql = "SELECT * FROM articles
+//         ORDER BY created_at DESC
+//         LIMIT $itemsPerPage OFFSET $offset";
+//
+//         $query = $pdo->prepare($sql);
+//         $query->execute();
+//         $articles = $query->fetchAll();
+//         // debug($articles);
+//
+//
+//
+// // $currentPage = 8;
+
+
+// $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
+
 
 ////////// jeff=> chercher dans BDD tous les ID de movies_full
 $success = false;
 $errors = array();
-
+// PROF =>  Mettre vos request separment , dans des fonctions pour réutiliser
+// exemple => function getRandomMovie($count){ }
 $sql = "SELECT *
         FROM movies_full
         LIMIT 5";
@@ -40,6 +76,9 @@ include('inc/header.php');?>
   </div>
 </section>
 
+<<<<<<< HEAD
+<!-- <?php echo $paginator; ?> -->
+=======
 
 
 
@@ -47,6 +86,10 @@ include('inc/header.php');?>
 //////////////////////virgin => pagination
 //pagination on compter le nombre d'éléments
 //et on va chercher les articles que l'on a besoin
+
+
+
+
 
 
 //ok
@@ -82,6 +125,7 @@ $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern
 
 
 <?php echo $paginator; ?>
+>>>>>>> a5016b73e521f64549406f7a87f76487e7a9e372
 
 
 
