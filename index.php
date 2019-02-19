@@ -26,7 +26,7 @@ include('inc/header.php');?>
   <div class="wrap">
     <?php  foreach ($movies as $movie) {?>
       <div class="images">
-        <a href="detail.php?=id <?php echo imgAleatoire($movie['id']) ?>"><img src="posters/<?php echo imgAleatoire($movie['id']); ?>.jpg" alt="<?php echo imgAleatoire($movie['id']) ?>"></a>
+        <a href="detail.php?=id<?php echo imgAleatoire($movie['id']) ?>"><img src="posters/<?php echo imgAleatoire($movie['id']); ?>.jpg" alt="<?php echo imgAleatoire($movie['id']) ?>"></a>
       </div>
    <?php } ?>
 
