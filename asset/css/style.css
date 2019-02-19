@@ -1,5 +1,5 @@
 @import "reset.css";
-<<<<<<< HEAD
+
 
 /*----------------------------------------------------------*/
 /*--------------------------HEADER--------------------------*/
@@ -74,4 +74,3 @@ body{}
 #film {background-color: grey;}
 #film .images{float: left; width: 20%; margin-bottom: 30px;}
 #film .plus {margin: 0 auto; width: 15%; background-color: lightgreen;}
->>>>>>> 54ec2b85ceb21402f57d38c6157a4c130344bdf4
