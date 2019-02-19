@@ -1,4 +1,5 @@
 @import "reset.css";
+body{}
 .wrap {margin: 0 auto; width: 100%; max-width: 1200px;}
 
 /* header du site */
@@ -6,4 +7,5 @@
 
 /* Partie centrale de l'index */
 #film {background-color: grey;}
-#film .images{float: left; width: 25%;}
+#film .images{float: left; width: 20%; margin-bottom: 30px;}
+#film .plus {margin: 0 auto; width: 15%; background-color: lightgreen;}
