@@ -18,16 +18,11 @@
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
                     <li><a href="contact.php">Contact</a></li>
-                    <!-- <li><a href="admin/index.php">Back-office</a></li> -->
-                    <!-- <li><a href="admin/article-add.php">New-Post</a></li> -->
-
+                    <li><a href="inscription.php">Inscription</a></li>
                     <li><a href="register.php">Inscription</a></li>
                     <li><a href="login.php">Connexion</a></li>
-
                     <li><a href="deconnexion.php">Deconnexion</a></li>
                     <li><a href="profil.php">Profil</a></li>
-                    <!-- <li>Bonjour <?php echo $_SESSION['user']['pseudo']; ?></li> -->
-
                     <li><a href="admin/index.php">Back-office</a></li>
 
                 </ul>
