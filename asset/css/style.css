@@ -1,12 +1,12 @@
 @import "reset.css";
-<<<<<<< HEAD
+
 
 /*----------------------------------------------------------*/
 /*--------------------------HEADER--------------------------*/
 /*----------------------------------------------------------*/
 header .wrap {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 header {
@@ -65,7 +65,7 @@ footer .pied-page p {
 }
 =======
 body{}
-.wrap {margin: 0 auto; width: 100%; max-width: 1200px;}
+section .wrap {margin: 0 auto; width: 100%; max-width: 1200px;}
 
 /* header du site */
 
@@ -74,4 +74,3 @@ body{}
 #film {background-color: grey;}
 #film .images{float: left; width: 20%; margin-bottom: 30px;}
 #film .plus {margin: 0 auto; width: 15%; background-color: lightgreen;}
->>>>>>> 54ec2b85ceb21402f57d38c6157a4c130344bdf4
