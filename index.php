@@ -79,6 +79,7 @@ include('inc/header.php');?>
   </div>
 </section>
 
+<<<<<<< HEAD
 
 
 
@@ -130,5 +131,7 @@ $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern
 
 
 
+=======
+>>>>>>> 0624571368d9c3aba026fb1ebe806b8e0f93cb03
 
 <?php  include('inc/footer.php'); ?>
