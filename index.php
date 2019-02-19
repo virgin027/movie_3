@@ -1,6 +1,13 @@
 <?php
-echo 'bonkjour';
-echo 'welcome';
-echo 'Hello World';
-echo 'ça va être dur';
-echo 'c/est le travail'; ?>
+include('inc/fonctions.php');
+include('inc/request.php');
+include('inc/pdo.php');
+
+
+
+
+include('inc/header.php');?>
+
+
+
+<?php include('inc/footer.php');
