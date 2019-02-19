@@ -36,6 +36,9 @@ function countArticles($status = 'all')
   return $totalItems;
 }
 
+
+//////// Virgin ====>Pagination
+
 function getArticlespaginate($itemsPerPage,$offset)
 {
   global $pdo;

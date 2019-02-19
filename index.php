@@ -1,9 +1,5 @@
 <?php
-include('inc/fonctions.php');
-include('inc/request.php');
-include('inc/pdo.php');
-//// virgin => paginator
-include('vendor/autoload.php');
+include('inc/combi.php');
 use JasonGrimes\Paginator;
 
 ////////// jeff=> chercher dans BDD tous les ID de movies_full
