@@ -36,6 +36,10 @@ include('inc/header.php');?>
 //et on va chercher les articles que l'on a besoin
 
 
+
+
+
+
 //ok
 //// le 5 corrsepond au bre d'image qui s'affichera
 $itemsPerPage = 5;
