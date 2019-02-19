@@ -1,0 +1,8 @@
+/vendor/
+/posters/
+/inc/pdo.php
+### OSX ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
