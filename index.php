@@ -5,7 +5,8 @@ use JasonGrimes\Paginator;
 ////////// jeff=> chercher dans BDD tous les ID de movies_full
 $success = false;
 $errors = array();
-
+// PROF =>  Mettre vos request separment , dans des fonctions pour réutiliser
+// exemple => function getRandomMovie($count){ }
 $sql = "SELECT *
         FROM movies_full
         LIMIT 5";
