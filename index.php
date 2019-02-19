@@ -79,59 +79,5 @@ include('inc/header.php');?>
   </div>
 </section>
 
-<<<<<<< HEAD
-
-
-
-
-
-<?php
-//////////////////////virgin => pagination
-//pagination on compter le nombre d'éléments
-//et on va chercher les articles que l'on a besoin
-
-
-
-
-
-
-//ok
-//// le 5 corrsepond au bre d'image qui s'affichera
-$itemsPerPage = 5;
-$urlPattern = '?page=(:num)';
-$totalItems = countArticles();
-$currentPage = 1;
-$offset = 0;
-if (!empty($_GET['page'])) {
-  $currentPage = $_GET['page'];
-  $offset = ($currentPage - 1) * $itemsPerPage;
-}
-
-$sql = "SELECT * FROM articles
-        ORDER BY created_at DESC
-        LIMIT $itemsPerPage OFFSET $offset";
-
-        $query = $pdo->prepare($sql);
-        $query->execute();
-        $articles = $query->fetchAll();
-        // debug($articles);
-
-
-
-// $currentPage = 8;
-
-
-$paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
- ?>
-
-
-
-
-<?php echo $paginator; ?>
-
-
-
-=======
->>>>>>> 0624571368d9c3aba026fb1ebe806b8e0f93cb03
 
 <?php  include('inc/footer.php'); ?>
