@@ -1,1 +1,64 @@
 @import "reset.css";
+
+/*----------------------------------------------------------*/
+/*--------------------------HEADER--------------------------*/
+/*----------------------------------------------------------*/
+header .wrap {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+header {
+    font-family: verdana, sans-serif;
+    background-color: black;
+}
+
+/* ------------------Mise en forme du logo "MOVIE 3" ---------------*/
+header h1 {
+    display: inline-block;
+    font-size: 3em;
+    float: left;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+header .logo {
+    color: #ff0000; /* rouge du logo */
+    font-weight: bold;
+    text-decoration: none;
+}
+header .logo:hover {
+    color: #ff7d05; /* orange du logo:hover */
+}
+
+/* -------------Mise en forme du nav---------------- */
+header nav li {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+header nav a {
+    color: white;
+    padding: 5px 12px 5px 12px;
+    border-radius: 5px 5px;
+}
+header nav a:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #ff7d05; /* orange des liens a:hover */
+}
+
+/* ---------------------------------------------------------- */
+/* ------------------ FOOTER -------------------------------- */
+/* ---------------------------------------------------------- */
+footer {
+    font-family: verdana, sans-serif;
+}
+/* -----------------Mise en forme du footer ----------------*/
+footer .pied-page {
+    height: 50px;
+    background-color: black;
+}
+footer .pied-page p {
+    text-align: center;
+    padding-top: 15px;
+    color: white;
+}

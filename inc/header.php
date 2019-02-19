@@ -12,7 +12,26 @@
 
 	<header>
         <div class="wrap">
-
+            <h1><a class="logo" href="index.php">MOVIE 3</a></h1>
+            <div class="clear"></div>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <!-- <li><a href="admin/index.php">Back-office</a></li> -->
+                    <!-- <li><a href="admin/article-add.php">New-Post</a></li> -->
+                    <?php if(!isLogged()) { ?>
+                    <li><a href="register.php">Inscription</a></li>
+                    <li><a href="login.php">Connexion</a></li>
+                <?php } else { ?>
+                    <li><a href="deconnexion.php">Deconnexion</a></li>
+                    <li><a href="profil.php">Profil</a></li>
+                    <li>Bonjour <?php echo $_SESSION['user']['pseudo']; ?></li>
+                <?php } ?>
+                <?php if(isAdmin()) { ?>
+                    <li><a href="admin/index.php">Back-office</a></li>
+                <?php } ?>
+                </ul>
+            </nav>
         </div>
 	</header>
-	
