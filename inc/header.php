@@ -12,6 +12,7 @@
 
 	<header>
         <div class="wrap">
+<<<<<<< HEAD
             <h1><a class="logo" href="index.php">MOVIE 3</a></h1>
             <div class="clear"></div>
             <nav>
@@ -33,5 +34,8 @@
                 <?php } ?>
                 </ul>
             </nav>
+=======
+        
+>>>>>>> 54ec2b85ceb21402f57d38c6157a4c130344bdf4
         </div>
 	</header>
