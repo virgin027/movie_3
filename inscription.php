@@ -1,10 +1,10 @@
 <?php
-include('inc/fonctions.php');
-include('inc/request.php');
-include('inc/pdo.php');
+include('inc/combi.php');
+
 // include('vendor/autoload.php';
 
-//////////////////////////////inscription sit + mots de passe
+//////////// Virgin
+//////////////////////////////inscription site + mots de passe
 $error = array();
 
 if (!empty($_POST['submitided'])) {

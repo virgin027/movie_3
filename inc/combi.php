@@ -1,0 +1,7 @@
+<?php
+
+include('inc/fonctions.php');
+include('inc/request.php');
+include('inc/pdo.php');
+//// virgin => paginator
+include('vendor/autoload.php');
