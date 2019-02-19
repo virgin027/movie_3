@@ -50,7 +50,9 @@ $query = $pdo->prepare($sql);
 //JF- j'execute
 $query->execute();
 $movies = $query->fetchAll();
-// debug($movies);
+
+
+debug($movies);
 // echo imgAleatoire();
 
 // debug($errors);
@@ -60,9 +62,10 @@ include('inc/header.php');?>
 <!--J Création d'une div  avec tous les films. -->
 <section id="film">
   <div class="wrap">
-    <?php  foreach ($movies as $movie) {?>
+    <?php  foreach ($movies as $movie) {
+      $title = imgAleatoire($movie['id']);?>
       <div class="images">
-        <a href="detail.php?=id <?php echo imgAleatoire($movie['id']) ?>"><img src="posters/<?php echo imgAleatoire($movie['id']); ?>.jpg" alt="<?php echo imgAleatoire($movie['id']) ?>"></a>
+        <a href="detail.php?=id<?php echo imgAleatoire($movie['id']) ?>"><img src="posters/<?php echo $movie['id']; ?>.jpg" alt="<?php echo imgAleatoire($movie['id']) ?>"></a>
       </div>
    <?php } ?>
 
@@ -76,9 +79,8 @@ include('inc/header.php');?>
   </div>
 </section>
 
-<<<<<<< HEAD
-<!-- <?php echo $paginator; ?> -->
-=======
+
+
 
 
 
@@ -125,7 +127,7 @@ $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern
 
 
 <?php echo $paginator; ?>
->>>>>>> a5016b73e521f64549406f7a87f76487e7a9e372
+
 
 
 
