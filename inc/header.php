@@ -12,7 +12,6 @@
 
 	<header>
         <div class="wrap">
-
+        
         </div>
 	</header>
-	
