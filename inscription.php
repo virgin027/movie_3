@@ -110,7 +110,7 @@ if (!empty($_POST['submitided'])) {
 
 include('inc/header.php');?>
 
-<h1 align="center">Inscription</h1>
+
 
    <form class="" action="" method="post" >
 
@@ -139,7 +139,7 @@ include('inc/header.php');?>
       <input type="submit" name="submitided" class="btn btn-primary" value="Envoyer !" />
 
    </form>
-   
+
 
 
 <?php include('inc/footer.php');
