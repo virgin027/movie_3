@@ -41,8 +41,8 @@ use JasonGrimes\Paginator;
 $success = false;
 $errors = array();
 // PROF =>  Mettre vos request separment , dans des fonctions pour réutiliser
-// exemple => function getRandomMovie($count){ }
-$sql = "SELECT *
+// exemple =>function getRandomMovie($count){}
+$sql = "SELECT id, title
         FROM movies_full
         LIMIT 5";
 //JF- je prepare ma requete
@@ -50,22 +50,19 @@ $query = $pdo->prepare($sql);
 //JF- j'execute
 $query->execute();
 $movies = $query->fetchAll();
-
+imgAleatoire($movies);
 
 debug($movies);
-// echo imgAleatoire();
-
-// debug($errors);
-/////////jeff => afficher le simages sur la pages
+debug($errors);
+/////////jeff => afficher les images sur la pages
 include('inc/header.php');?>
 
 <!--J Création d'une div  avec tous les films. -->
 <section id="film">
   <div class="wrap">
-    <?php  foreach ($movies as $movie) {
-      $title = imgAleatoire($movie['id']);?>
+    <?php foreach ($movies as $movie) { $movie['id'] = imgAleatoire($movie);?>
       <div class="images">
-        <a href="detail.php?=id<?php echo imgAleatoire($movie['id']) ?>"><img src="posters/<?php echo $movie['id']; ?>.jpg" alt="<?php echo imgAleatoire($movie['id']) ?>"></a>
+        <a href="detail.php?=id<?php echo $movie['id'];?>"><img src="posters/<?php echo $movie['id'];?>.jpg" alt="<?php echo $movie['title']; ?>"></a>
       </div>
    <?php } ?>
 
@@ -73,7 +70,7 @@ include('inc/header.php');?>
 
 <!-- Creation d'un bouton "plus" qui permet -->
    <div class="">
-     <input class="plus" type="button" name="" value="+ de films">
+     <input type="submit" name="submitted" value="+ de films">
    </div>
 
   </div>

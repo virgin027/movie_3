@@ -3,12 +3,12 @@
 function imgAleatoire(){
   $min = 4238;
   $max = 13315;
-  $image = rand($min,$max);
-  if(!empty($image)){
-    if($image < $min || $image > $max){
+  $movie= rand($min,$max);
+  if(!empty($movie)){
+    if($movie < $min || $movie > $max){
       echo "Pas d'images associées";
     }else {
-      echo $image;
+      return $movie;
     }
   }
 }
