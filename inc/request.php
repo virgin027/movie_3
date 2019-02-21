@@ -1,4 +1,15 @@
 <?php
+
+function getMovieBySlug($slug){
+  global $pdo;
+  $sql = "SELECT * FROM movies_full
+          WHERE slug = :slug";
+  $query = $pdo->prepare($sql);
+  $query->bindValue(':slug',$slug,PDO::PARAM_STR);
+  $query->execute();
+  return $query->fetch();
+}
+
 ////////////////////////////////////
 // articles
 //////////////////////////////////////////
