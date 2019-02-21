@@ -1,5 +1,5 @@
 <?php
-
+////récupere dans la base de donnée le slug
 function getMovieBySlug($slug){
   global $pdo;
   $sql = "SELECT * FROM movies_full
@@ -9,6 +9,9 @@ function getMovieBySlug($slug){
   $query->execute();
   return $query->fetch();
 }
+
+
+
 
 ////////////////////////////////////
 // articles

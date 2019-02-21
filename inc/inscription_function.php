@@ -17,7 +17,7 @@ function valideText($error,$value,$key,$content,$min = 2,$max = 100)
   return $error;
 }
 
-/////// pour le MP enregistrer dans base de donnée
+/////// pour le MP enregistrer dans base de donnée ===> hachage pour mp base de donnée
 function generateRandomString($length = 100) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
