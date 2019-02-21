@@ -19,7 +19,6 @@
                     <li><a href="index.php">Accueil</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="inscription.php">Inscription</a></li>
-                    <li><a href="register.php">Inscription</a></li>
                     <li><a href="login.php">Connexion</a></li>
                     <li><a href="deconnexion.php">Deconnexion</a></li>
                     <li><a href="profil.php">Profil</a></li>

@@ -1,8 +1,6 @@
 <?php
-include('inc/fonctions.php');
-include('inc/request.php');
-// include('inc/pdo.php');
-include('inc/fonction_detail.php');
+include('inc/combi.php');
+
 
 // debug($_GET);
 if (!empty($_GET['id'])) {
@@ -22,7 +20,7 @@ foreach($movies as $movie){
 };
   if(!empty($film)) {
 
-  } 
+  }
  // else{
  //   die('Erreur 404');
  // }

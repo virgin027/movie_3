@@ -51,30 +51,15 @@ if (!empty($_GET['email']) && !empty($_GET['token'])) {
         header('Location: login.php');
         die();
 
-        //////erreur code {}
+
       }
     }else {
       die('404');
-  } else {
-    die('404');
+   }
+}else {
+ die('404');
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
