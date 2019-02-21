@@ -139,7 +139,7 @@ include('inc/header.php');?>
       <input type="submit" name="submitided" class="btn btn-primary" value="Envoyer !" />
 
    </form>
-   <a href="forgetpassword.php">Mot de passe oublié</a>
+   
 
 
 <?php include('inc/footer.php');

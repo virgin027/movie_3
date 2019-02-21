@@ -12,7 +12,6 @@
 
 	<header>
         <div class="wrap">
-
             <h1><a class="logo" href="index.php">MOVIE 3</a></h1>
             <div class="clear"></div>
             <nav>
@@ -31,13 +30,10 @@
 
 
                     <li><a href="inscription.php">Inscription</a></li>
-                    <li><a href="register.php">Inscription</a></li>
                     <li><a href="login.php">Connexion</a></li>
                     <li><a href="deconnexion.php">Deconnexion</a></li>
                     <li><a href="profil.php">Profil</a></li>
-
                     <li><a href="admin/index.php">Back-office</a></li>
-
                 </ul>
             </nav>
 

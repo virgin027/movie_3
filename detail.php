@@ -1,38 +1,26 @@
 <?php
-include('inc/fonctions.php');
-include('inc/request.php');
-include('inc/pdo.php');
-include('inc/fonction_detail.php');
-
-if (!empty($_GET['id'] && is_numeric($_GET['id']))) {
-$id= trim(strip_tags($_GET['id']));
-$year= trim(strip_tags($_GET['year']));
-$slug= trim(strip_tags($_GET['slug']));
-$genres= trim(strip_tags($_GET['genres']));
-$directors= trim(strip_tags($_GET['directors']));
-$popularity= trim(strip_tags($_GET['popularity']));
-$plot = trim(strip_tags($_GET['plot']));
-
-$slug = urldecode($_GET['id']);
-$sql = "SELECT * FROM movies_full
-        WHERE id = :id";
-$query=$pdo->prepare($sql);
-$query->bindValue(':id',$id,PDO::PARAM_INT);
-$query->bindValue(':year',$year,PDO::PARAM_STR);
-$query->bindValue(':slug',$slug,PDO::PARAM_STR);
-$query->bindValue(':genres',$genres,PDO::PARAM_STR);
-$query->bindValue(':directors',$directors,PDO::PARAM_STR);
-$query->bindValue(':popularity',$popularity,PDO::PARAM_STR);
-$query->bindValue(':plot',$plot,PDO::PARAM_STR);
-$query->execute();
-$films=$query->fetchAll();
-
-}
-debug($films);
+include('inc/combi.php');
 
 
+// debug($_GET);
+if (!empty($_GET['id'])) {
+  echo $_GET['id'];
+// } else{
+//   die ('Erreur 404');
+// };
 
-debug($_GET);
+$id = $_GET['id'];
+$film = array();
+
+foreach($movies as $movie){
+
+  if ($id == $movie['id']){
+    $film = $movie;
+  }
+};
+  if(!empty($film)) {
+
+  }
  // else{
  //   die('Erreur 404');
  // }

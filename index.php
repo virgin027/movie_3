@@ -70,7 +70,7 @@ include('inc/header.php');?>
 
    <div class="clear"></div>
 
-<!-- Creation d'un bouton "plus" qui permet -->
+<!-- Creation d'un bouton "plus" qui permetde réactualiser la page -->
    <div class="">
      <input type="submit" name="submitted" value="+ de films">
    </div>
