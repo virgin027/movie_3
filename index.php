@@ -62,15 +62,7 @@ include('inc/header.php');?>
   <div class="wrap">
     <?php foreach ($movies as $movie) { $movie['id'] = imgAleatoire($movie);?>
       <div class="images">
-<<<<<<< HEAD
-        <a href="detail.php?=id<?php echo $movie['id'];?>"><img src="posters/<?php echo $movie['id'];?>.jpg" alt="<?php echo $movie['title']; ?>"></a>
-=======
-<<<<<<< HEAD
-        <a href="detail.php?=id<?php echo imgAleatoire($movie['id']) ?>"><img src="posters/<?php echo imgAleatoire($movie['id']); ?>.jpg" alt="<?php echo imgAleatoire($movie['id']) ?>"></a>
-=======
-        <a href="detail.php?=id<?php echo imgAleatoire($movie['id']) ?>"><img src="posters/<?php echo $movie['id']; ?>.jpg" alt="<?php echo imgAleatoire($movie['id']) ?>"></a>
->>>>>>> 8de21107f1bb120fe59e141e62c8426ce38c8cd4
->>>>>>> 09a665628c809eea20978221554e644a08c24081
+        <a href="detail.php?=id<?php echo $movie['id'];?>"><img src="posters/<?php echo $movie['id'];?>.jpg" alt="<?php echo $movie['slug']; ?>"></a>
       </div>
    <?php } ?>
 
@@ -79,6 +71,12 @@ include('inc/header.php');?>
 <!-- Creation d'un bouton "plus" qui permet -->
    <div class="">
      <input type="submit" name="submitted" value="+ de films">
+   </div>
+
+   <div class="recherche">
+     <input type="text" name="" value="Categorie">
+     <input type="text" name="" value="Année">
+     <input type="text" name="" value="Popularité">
    </div>
 
   </div>

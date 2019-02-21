@@ -13,6 +13,17 @@ function imgAleatoire(){
   }
 }
 
+// fonction if file exist
+function fileExist(){
+  $fichier = "posters/". $movie['id'] ."jpg";
+  if (file_exists($fichier)) {
+    echo "Le fichier" . $fichier . "existe.";
+  }else{
+    echo "Le fichier". $fichier . "n'existe pas.";
+  }
+}
+
+
 // traitement de ce formulaire
 // function valideText($error,$value,$key,$content,$min = 2,$max = 100)
 // {
