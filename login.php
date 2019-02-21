@@ -59,7 +59,7 @@ if (!empty($_POST['submitided'])) {
   </div>
   <div class="form-group">
         <label for="password">Password*</label>
-        <input type="text" name="password" id="password" class="form-control" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>" />
+        <input type="password" name="password" id="password" class="form-control" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>" />
   </div>
 
   <input type="submit" name="submitided" value="Connexion !" />

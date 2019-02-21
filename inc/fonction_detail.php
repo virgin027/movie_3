@@ -10,4 +10,3 @@ function imageMovie($movie)
 return '<img src="posters' .
 $movie['id'].'.jpg" alt="'. $movie['title']. '">';
 }
-?>

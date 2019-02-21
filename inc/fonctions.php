@@ -26,6 +26,7 @@ function slugify($text)
   return $text;
 }
 
+<<<<<<< HEAD
 function valideText($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
 {
   if (!empty($value)){
@@ -40,4 +41,18 @@ function valideText($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
       }
   }
   return $error;
+=======
+
+
+
+/////// pour le MP enregistrer dans base de donnée===> inscription hachage du mot de passe
+function generateRandomString($length = 100) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+>>>>>>> 01a0df9790673a1eaf5ccc2a60cc596a9f4992c8
 }
