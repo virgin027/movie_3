@@ -23,8 +23,8 @@ if (!empty($_GET['slug']) ) {
    <p class="real" name="directors"><?php echo $movie['directors']; ?></p>
    <p class="real" name="popularity"><?php echo $movie['popularity']; ?></p>
    <p class="real" name="plot"><?php echo $movie['plot']; ?></p>
-   <?php echo imageMovie($movie); // a reparer
-   ?>
+   <img src="posters/<?php echo $movie['id']; ?>.jpg">
+
 
   <?php
   include('inc/footer.php');
