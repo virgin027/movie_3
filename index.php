@@ -62,15 +62,15 @@ include('inc/header.php');?>
   <div class="wrap">
     <?php foreach ($movies as $movie) { $movie['id'] = imgAleatoire($movie);?>
       <div class="images">
-        <a href="detail.php?=id<?php echo $movie['id'];?>"><img src="posters/<?php echo $movie['id'];?>.jpg" alt="<?php echo $movie['slug']; ?>"></a>
+        <a href="detail.php?id=<?php echo $movie['id'];?>"><img src="posters/<?php echo $movie['id'];?>.jpg" alt="<?php echo $movie['slug']; ?>"></a>
       </div>
    <?php } ?>
 
    <div class="clear"></div>
 
-<!-- Creation d'un bouton "plus" qui permet -->
+<!-- Creation d'un bouton "plus" qui permetde réactualiser la page -->
    <div class="">
-     <input type="submit" name="submitted" value="+ de films">
+     <a href="index.php"><input type="submit" value="+ de films"></a>
    </div>
 
    <div class="recherche">

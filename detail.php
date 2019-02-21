@@ -1,44 +1,32 @@
 <?php
-include('inc/fonctions.php');
-include('inc/request.php');
-// include('inc/pdo.php');
-include('inc/fonction_detail.php');
+include('inc/combi.php');
+
 
 // debug($_GET);
-if (!empty($_GET['id'])) {
-  echo $_GET['id'];
-// } else{
-//   die ('Erreur 404');
-// };
+if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
+  $id = $_GET['id'];
+  $film = array();
 
-$id = $_GET['id'];
-$film = array();
-
-foreach($movies as $movie){
-
-  if ($id == $movie['id']){
-    $film = $movie;
+  foreach ($movies as $movie) {
+    if ($id == $movie['id'])
+    {
+      $film= $movie;
+      // debug($film);
+    };
   }
-};
-  if(!empty($film)) {
+  if (!empty($film)) {
 
-  } 
- // else{
- //   die('Erreur 404');
- // }
-};
+  }else {
+    die ('404');
+  }
+}else{
+  die ('404');
+}
  include('inc/header.php'); ?>
  <div class="wrap">
-
-   <h1><?php echo $film['title']; ?>
-   <p class="annee"><?php echo$film['year'];?></p>
-   <p class="real"><?php echo $film['slug']; ?></p>
-   <p class="real"><?php echo $film['genres']; ?></p>
-   <p class="real"><?php echo $film['directors']; ?></p>
-   <p class="real"><?php echo $film['popularity']; ?></p>
-   <p class="real"><?php echo $film['plot']; ?></p>
-   <?php echo imageMovie($film);
-   ?>
+     <h1><?php echo $film['title']; ?></h1>
+     <h3>Anné: <?php echo $film['year'] ?></h3>
+   </div>
 
   <?php
   include('inc/footer.php');
