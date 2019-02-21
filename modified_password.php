@@ -21,10 +21,11 @@ if (!empty($_GET['email']) && !empty($_GET['token'])) {
     //form soumis
     echo 'dede';
     if (!empty($_POST['submitted'])) {
+
       $password  = trim(strip_tags($_POST['password']));
       $password2 = trim(strip_tags($_POST['password2']));
       // Validation password
-      if (!empty($password) OR !empty($password2)) {
+            if (!empty($password) OR !empty($password2)) {
         if($password != $password2) {
           $error['password'] = 'Les deux mots de passe ne sont pas identique';
         } elseif (mb_strlen($password) < 6) {
@@ -67,8 +68,7 @@ if (!empty($_GET['email']) && !empty($_GET['token'])) {
 
 
 include('inc/header.php');?>
-
-
+<!--problème d'affichage d'erreur  -->
 
 <h1>Modifier votre mot de passe</h1>
 <form class="" method="post">
