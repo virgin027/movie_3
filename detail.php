@@ -3,23 +3,21 @@ include('inc/combi.php');
 
 
 // debug($_GET);
-if (!empty($_GET['id'])) {
-  echo $_GET['id'];
-// } else{
-//   die ('Erreur 404');
-// };
+if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
+  $id = $_GET['id'];
+  $film = array();
 
-$id = $_GET['id'];
-$film = array();
-
-foreach($movies as $movie){
-
-  if ($id == $movie['id']){
-    $film = $movie;
+  foreach ($movies as $movie) {
+    if ($id == $movie['id'])
+    {
+      $film= $movie;
+      // debug($film);
+    };
   }
-};
-  if(!empty($film)) {
+  if (!empty($film)) {
 
+  }else {
+    die ('404');
   }
  // else{
  //   die('Erreur 404');

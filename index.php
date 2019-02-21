@@ -72,7 +72,13 @@ include('inc/header.php');?>
 
 <!-- Creation d'un bouton "plus" qui permetde réactualiser la page -->
    <div class="">
-     <input type="submit" name="submitted" value="+ de films">
+     <a href="index.php"><input type="submit" value="+ de films"></a>
+   </div>
+
+   <div class="recherche">
+     <input type="text" name="" value="Categorie">
+     <input type="text" name="" value="Année">
+     <input type="text" name="" value="Popularité">
    </div>
 
   </div>
