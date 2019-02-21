@@ -53,8 +53,8 @@ $query->execute();
 $movies = $query->fetchAll();
 // imgAleatoire($movies);
 
-debug($movies);
-debug($errors);
+// debug($movies);
+// debug($errors);====>afficher tableau
 /////////jeff => afficher les images sur la pages
 include('inc/header.php');?>
 
