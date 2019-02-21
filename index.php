@@ -42,15 +42,16 @@ $success = false;
 $errors = array();
 // PROF =>  Mettre vos request separment , dans des fonctions pour réutiliser
 // exemple =>function getRandomMovie($count){}
-$sql = "SELECT id, title
+$sql = "SELECT *
         FROM movies_full
+        ORDER BY RAND()
         LIMIT 5";
 //JF- je prepare ma requete
 $query = $pdo->prepare($sql);
 //JF- j'execute
 $query->execute();
 $movies = $query->fetchAll();
-imgAleatoire($movies);
+// imgAleatoire($movies);
 
 debug($movies);
 debug($errors);
@@ -60,10 +61,10 @@ include('inc/header.php');?>
 <!--J Création d'une div  avec tous les films. -->
 <section id="film">
   <div class="wrap">
-    <?php foreach ($movies as $movie) { $movie['id'] = imgAleatoire($movie);?>
+    <?php foreach ($movies as $movie) { ?>
       <div class="images">
 
-        <a href="detail.php?=id<?php echo $movie['id'];?>"><img src="posters/<?php echo $movie['id'];?>.jpg" alt="<?php echo $movie['title']; ?>"></a>
+        <a href="detail.php?slug=<?php echo $movie['slug']; ?>"><img src="posters/<?php echo $movie['id']; ?>.jpg" alt="<?php echo $movie['title']; ?>"></a>
 
       </div>
    <?php } ?>
@@ -72,7 +73,13 @@ include('inc/header.php');?>
 
 <!-- Creation d'un bouton "plus" qui permetde réactualiser la page -->
    <div class="">
-     <input type="submit" name="submitted" value="+ de films">
+     <a href="index.php"><input type="submit" value="+ de films"></a>
+   </div>
+
+   <div class="recherche">
+     <input type="text" name="" value="Categorie">
+     <input type="text" name="" value="Année">
+     <input type="text" name="" value="Popularité">
    </div>
 
   </div>

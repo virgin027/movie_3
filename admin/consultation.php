@@ -6,7 +6,7 @@ include('../inc/request.php');
 
 
 include('inc/header-back.php'); ?>
-<p>PAGE STATISTIQUES A CREER</p>
+<p>PAGE CONSULTATION A CREER</p>
 
 
 

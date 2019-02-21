@@ -1,10 +1,10 @@
 <?php // fonctions.php
 
-function imgAleatoire(){
+function imgAleatoire() {
   $min = 4238;
   $max = 13315;
   $movie= rand($min,$max);
-  if(!empty($movie)){
+  if(!empty($movie)) {
     if($movie < $min || $movie > $max){
       echo "Pas d'images associées";
     }else {
@@ -12,6 +12,17 @@ function imgAleatoire(){
     }
   }
 }
+
+// fonction if file exist
+function fileExist(){
+  $fichier = "posters/". $movie['id'] ."jpg";
+  if (file_exists($fichier)) {
+    echo "Le fichier" . $fichier . "existe.";
+  }else{
+    echo "Le fichier". $fichier . "n'existe pas.";
+  }
+}
+
 
 // traitement de ce formulaire
 // function valideText($error,$value,$key,$content,$min = 2,$max = 100)
