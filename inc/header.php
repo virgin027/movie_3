@@ -19,16 +19,19 @@
                    <li><a href="index.php">Accueil</a></li>
                    <li><a href="contact.php">Contact</a></li>
                    <?php if(!isLogged()) { ?>
+
                    <li><a href="inscription.php">Inscription</a></li>
+
                    <li><a href="login.php">Connexion</a></li>
-                    <?php  }else{ ?>
+                    <?php }else{ ?>
                     <li><a href="profil.php">Profil</a></li>
-                    <li>bonjour <?php echo $_SESSION['users']['pseudo']; ?></li>
-                  <?php   } ?>
-                   <li><a href="deconnexion.php">Deconnexion</a></li>
+
+                    <li style="color:white;">bonjour <?php echo $_SESSION['users']['pseudo']; ?></li>
+                  <?php } ?>
+                  <li><a href="deconnexion.php">Deconnexion</a></li>
                    <?php if(!isAdmin()) { ?>
                    <li><a href="admin/index.php">Back-office</a></li>
-                   <?php }  ?>
+                   <?php } ?>
                </ul>
            </nav>
        </div>
