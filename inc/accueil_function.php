@@ -1,8 +1,4 @@
 <?php // fonctions.php
-<<<<<<< HEAD
-
-=======
->>>>>>> 8de21107f1bb120fe59e141e62c8426ce38c8cd4
 
 function imgAleatoire(){
   $min = 4238;
