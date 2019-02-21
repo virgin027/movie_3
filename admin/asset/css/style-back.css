@@ -10,7 +10,7 @@ body {
 /* ------------------------------------------------------------------------------- */
 header .wrap {
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
 }
 header {
@@ -49,6 +49,17 @@ header nav a:hover {
     text-decoration: none;
     background-color: black; /* noir des liens a:hover */
 }
+
+#addmovie-page {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+
+
+
 
 /* ---------------------------------------------------------- */
 /* ------------------ FOOTER -------------------------------- */
