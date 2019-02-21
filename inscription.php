@@ -96,7 +96,7 @@ if (!empty($_POST['submitided'])) {
   // // execution de la requête
    $query->execute();
    //redirection vers la page dashboard
-  // header('Location: login.php');
+   header('Location: index.php');
    exit;
 
     }
@@ -139,7 +139,7 @@ include('inc/header.php');?>
       <input type="submit" name="submitided" class="btn btn-primary" value="Envoyer !" />
 
    </form>
-
+   <a href="forgetpassword.php">Mot de passe oublié</a>
 
 
 <?php include('inc/footer.php');
