@@ -1,10 +1,10 @@
 <?php // fonctions.php
 
-function imgAleatoire(){
+function imgAleatoire() {
   $min = 4238;
   $max = 13315;
   $movie= rand($min,$max);
-  if(!empty($movie)){
+  if(!empty($movie)) {
     if($movie < $min || $movie > $max){
       echo "Pas d'images associées";
     }else {
