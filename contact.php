@@ -51,52 +51,10 @@ include('inc/header.php'); ?>
   <input type="submit" name="submitcontact" value="envoyer">
 </form>
 
-$error = array();
-// Soumettre le formulaire
-if (!empty($_POST['submitted'])) {
-  //faille xxs
-  $nom = trim(strip_tags($_POST['nom']));
-  $message = trim(strip_tags($_POST['mail']));
-  $message = trim(strip_tags($_POST['message']));
-// validation
-  $error = textValidation($error,$nom,'nom', 2,20);
-  $error = valideEmail($error,$mail,'mail', 'mail');
-  $error = textValidation($error,$message,'message','message', 5,1500);
-  debug($error);
-
-// Si pas d'erreur
-if(count($error)== 0) {  // envoie d'un email
-
-
-    echo 'mail ok';
-    die();
-
-?>
 
 
 
-<?php  include('inc/header.php'); ?>
 
-
-<h1>Contact</h1>
-   <form method="post">
-      <div class="form-group">
-         <label for ="nom">Votre nom</label><br>
-         <span class="error"><?php if(!empty($error['nom'])) { echo $error['nom']; } ?></span>
-         <input type="tex" id="nom" name="nom"><br>
-       </div>
-      <div class="form-group">
-         <label for="mail">Votre mail</label><br>
-         <span class="error"><?php if(!empty($error['mail'])) { echo $error['mail']; } ?></span>
-         <input type="email" id="mail" name="email" class="form-control"><br>
-       </div>
-      <div class="form-group">
-         <label for = "message">Message</label><br>
-         <span class="error"></span>
-         <textarea name="message"><?php if(!empty($error['message'])) { echo $error['message']; } ?></textarea><br>
-         <input type="submit" id="message" name="submitted" value="envoyer">
-       </div>
-   </form>
 
 
 <?php
