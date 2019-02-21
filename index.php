@@ -62,15 +62,9 @@ include('inc/header.php');?>
   <div class="wrap">
     <?php foreach ($movies as $movie) { $movie['id'] = imgAleatoire($movie);?>
       <div class="images">
-<<<<<<< HEAD
-        <a href="detail.php?=id<?php echo $movie['id'];?>"><img src="posters/<?php echo $movie['id'];?>.jpg" alt="<?php echo $movie['title']; ?>"></a>
-=======
-<<<<<<< HEAD
-        <a href="detail.php?=id<?php echo imgAleatoire($movie['id']) ?>"><img src="posters/<?php echo imgAleatoire($movie['id']); ?>.jpg" alt="<?php echo imgAleatoire($movie['id']) ?>"></a>
-=======
-        <a href="detail.php?=id<?php echo imgAleatoire($movie['id']) ?>"><img src="posters/<?php echo $movie['id']; ?>.jpg" alt="<?php echo imgAleatoire($movie['id']) ?>"></a>
->>>>>>> 8de21107f1bb120fe59e141e62c8426ce38c8cd4
->>>>>>> 09a665628c809eea20978221554e644a08c24081
+
+        <a href="detail.php?id=<?php echo $movie['id'];?>"><img src="posters/<?php echo $movie['id'];?>.jpg" alt="<?php echo $movie['title']; ?>"></a>
+
       </div>
    <?php } ?>
 
