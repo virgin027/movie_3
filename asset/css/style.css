@@ -73,5 +73,5 @@ section .wrap {margin: 0 auto; width: 100%; max-width: 1200px;}
 #film {background-color: grey;}
 #film .images{float: left; width: 20%; margin-bottom: 30px;}
 #film .plus {margin: 0 auto; width: 15%; background-color: lightgreen;}
-#film .recherche{width: 100%;}
-#film .recherche input{width: 25%; float: left;}
+/* #film .recherche{width: 100%;}
+#film .recherche input{width: 25%; float: left;} */
