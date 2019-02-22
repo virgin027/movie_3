@@ -9,8 +9,7 @@ function getMovieBySlug($slug){
   $query->execute();
   return $query->fetch();
 }
-function getMovieById($id)
-{
+function getMovieById($id){
   global $pdo;
   $sql = "SELECT * FROM movies_full WHERE id = :id";
   $query = $pdo->prepare($sql);
@@ -18,6 +17,19 @@ function getMovieById($id)
   $query->execute();
   $data = $query->fetch();
   return $data;
+}
+function voirFilmFavoris($id_user) {
+	global $pdo;
+
+	$sql = "SELECT f.id AS idnote, m.title AS title,m.id AS id, m.year,directors FROM user_note AS f
+				LEFT JOIN movies_full AS m
+				ON f.id_movie = m.id
+				WHERE id_user = $id_user";
+
+	$query = $pdo->prepare($sql);
+	$query->execute();
+	$results = $query->fetchAll();
+	return $results;
 }
 
 
