@@ -27,6 +27,7 @@
                       <li><a href="profil.php">Profil</a></li>
                       <li style="color:white;">bonjour <?php echo $_SESSION['users']['pseudo']; ?></li>
                       <li><a href="deconnexion.php">Deconnexion</a></li>
+                      <li><a href="movietosee.php">Film à voir</a></li>
                       <?php if(isAdmin()) { ?>
                         <li><a href="admin/index.php">Back-office</a></li>
                       <?php } ?>

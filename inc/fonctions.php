@@ -41,8 +41,7 @@ function valideText($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
       }
   }
   return $error;
-  }
-
+}
 
 
 /////// pour le MP enregistrer dans base de donnée===> inscription hachage du mot de passe
