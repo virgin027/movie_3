@@ -27,16 +27,53 @@ if(!empty($_POST['submitted'])) {
     $error = valideText($error,$cast,'cast','cast', 1,100,false);
     $error = valideText($error,$writers,'writers','Auteur', 1,100,false);
     $error = valideText($error,$mpaa,'mpaa','mpaa', 1,100,false);
-
-    // REPRENDRE ICI AVEC LA VALIDATION DE YEAR,RUNTIME,RATING,POPULARITY
-
-
-    // if no error
-            //$slug = ???
-
-            // INSERT INTO
-
-
+    if(!empty($year)) {
+        if(!is_numeric($year) || strlen($year) != 4 ) {
+            $error['year'] = "Veuillez entrer une année avec 4 chiffres.";
+        }
+    }
+    if(!empty($runtime)) {
+        if(!is_numeric($runtime) || strlen($runtime) > 3 ) {
+            $error['runtime'] = "Veuillez entrer un temps en minutes et max 3 chiffres.";
+        }
+    }
+    if(!empty($rating)) {
+        if(!is_numeric($rating) || strlen($rating) > 3 ) {
+            $error['rating'] = "Veuillez entrer une note entre 0 et 100.";
+        }
+    }
+    if(!empty($_POST['popularity'])) {
+        if(!is_numeric($popularity) || strlen($popularity) > 3 ) {
+            $error['popularity'] = "Veuillez entrer une note du popularité entre 0 et 100.";
+        }
+    }
+    // s'il n'y a pas d'erreurs
+    if (count($error) == 0) {
+        // creation du slug
+        $slug = slugify($title) . '-' . $year;
+        // preparation de l'insert into
+        $sql = "INSERT INTO movies_full (slug,title,year,genres,plot,directors,cast,writers,runtime,mpaa,rating,popularity,created,poster_flag)
+                VALUES (:slug, :title, :year, :genres, :plot, :directors, :cast, :writers, :runtime, :mpaa, :rating, :popularity, NOW(), '0')";
+        // preparation de la requete
+        $query = $pdo->prepare($sql);
+        // protection injection SQL
+        $query->bindValue(':slug',$slug, PDO::PARAM_STR);
+        $query->bindValue(':title',$title, PDO::PARAM_STR);
+        $query->bindValue(':year',$year, PDO::PARAM_INT);
+        $query->bindValue(':genres',$genres, PDO::PARAM_STR);
+        $query->bindValue(':plot',$plot, PDO::PARAM_STR);
+        $query->bindValue(':directors',$directors, PDO::PARAM_STR);
+        $query->bindValue(':cast',$cast, PDO::PARAM_STR);
+        $query->bindValue(':writers',$writers, PDO::PARAM_STR);
+        $query->bindValue(':runtime',$runtime, PDO::PARAM_INT);
+        $query->bindValue(':mpaa',$mpaa, PDO::PARAM_STR);
+        $query->bindValue(':rating',$rating, PDO::PARAM_INT);
+        $query->bindValue(':popularity',$popularity, PDO::PARAM_INT);
+        // execution de la requete
+        $query->execute();
+        // redirection
+        header('location: listmovie.php');
+    }
 }
 
 include('inc/header-back.php'); ?>
