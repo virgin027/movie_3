@@ -66,14 +66,22 @@ $sql = "SELECT * FROM movies_full WHERE 1 = 1";
     // print_r($ann);
     // die();
 
-    $sql .= " AND year BETWEEN $annees";
+    $sql .= " AND year BETWEEN $ann[0] AND $ann[1]";
 
     // debug($sql);
     // die();
 
   }
 
-  $sql .= " ORDER BY RAND() LIMIT 5";
+  if (!empty($_POST['popularite'])) {
+    $popularites = $_POST['popularite'];
+    $pop = explode ('-',$popularites);
+
+    $sql .= " AND popularity BETWEEN $pop[0] AND $pop[1]";
+    //debug($sql);
+  }
+
+  $sql .= " ORDER BY rand() LIMIT 5";
 
   // echo $sql;die();
 
@@ -142,17 +150,23 @@ $gennnres = array('Drama','Fantasy', 'Romance', 'Acion', 'Thriller', 'Comedy', '
         <option value="1900-1910">1900 - 1910</option>
         <option value="1910-1930">1910 - 1930</option>
         <option value="1930-1950">1930 - 1950</option>
+        <option value="1950-1980">1950 - 1980</option>
+        <option value="1980-2000">1980 - 2000</option>
+        <option value="2000-2010">2000 - 2010</option>
+        <option value="2010-2020">2010 - 2020</option>
       </select>
     </div>
 
+    <div class="">
+      <select class="" name="popularite">
+        <!-- utilisation de explode avec between -->
+        <option value=""></option>
+        <option value="0-20">de 0 à 20</option>
+        <option value="20-50">de 20 à 50</option>
+        <option value="50-100">de 50 à 100</option>
+      </select>
+    </div>
 
-    <!-- <select class="" name="popularite">
-      utilisation de explode avec between
-      <option value=""></option>
-      <option value="0-20">de 0 à 20</option>
-      <option value="20-50">de 20 à 50</option>
-      <option value="50-100">de 50 à 100</option>
-    </select> -->
   </div>
   <input type="submit" name="submitted" value="recherche">
   </form>
