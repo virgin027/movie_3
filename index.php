@@ -42,18 +42,61 @@ $success = false;
 $errors = array();
 // PROF =>  Mettre vos request separment , dans des fonctions pour réutiliser
 // exemple =>function getRandomMovie($count){}
-$sql = "SELECT *
-       FROM movies_full
-       ORDER BY RAND()
-       LIMIT 5";
-//JF- je prepare ma requete
-$query = $pdo->prepare($sql);
-//JF- j'execute
-$query->execute();
-$movies = $query->fetchAll();
-// imgAleatoire($movies);
 
-// debug($movies);
+if(!empty($_POST['submitted'])) {
+$sql = "SELECT * FROM movies_full WHERE 1 = 1";
+  // genres
+  if(!empty($_POST['genres'])) {
+    $genres = $_POST['genres'];
+    $i = 1;
+      foreach ($genres as $genre) {
+        if($i == 1) {
+            $sql .= " AND genres LIKE '%".$genre."%'";
+        } else {
+          $sql .= " OR genres LIKE '%".$genre."%'";
+        }
+
+        $i++;
+      }
+  }
+
+  if (!empty($_POST['annee'])) {
+    $annees = $_POST['annee'];
+    $ann = explode ('-',$annees);
+    // print_r($ann);
+    // die();
+
+    $sql .= " AND year BETWEEN $annees";
+
+    // debug($sql);
+    // die();
+
+  }
+
+  $sql .= " ORDER BY RAND() LIMIT 5";
+
+  // echo $sql;die();
+
+  $query = $pdo->prepare($sql);
+  //JF- j'execute
+  $query->execute();
+  $movies = $query->fetchAll();
+
+
+} else {
+  $sql = "SELECT *
+         FROM movies_full
+         ORDER BY RAND()
+         LIMIT 5";
+     $query = $pdo->prepare($sql);
+     //JF- j'execute
+     $query->execute();
+     $movies = $query->fetchAll();
+}
+
+//JF- je prepare ma requete
+
+// imgAleatoire($movies);
 // debug($errors);====>afficher tableau
 /////////jeff => afficher les images sur la pages
 include('inc/header.php');?>
@@ -76,11 +119,43 @@ include('inc/header.php');?>
     <a href="index.php"><input type="submit" value="+ de films"></a>
   </div>
 
+
+<!-- checkbox -->
+<?php
+$gennnres = array('Drama','Fantasy', 'Romance', 'Acion', 'Thriller', 'Comedy', 'Family', 'Crime', 'Sci_Fi', 'Mistery', 'Adventure', 'Horror', 'War', 'Biography', 'Animation');
+ ?>
+ <form class="" action="" method="post">
+
+
   <div class="recherche">
-    <input type="text" name="" value="Categorie">
-    <input type="text" name="" value="Année">
-    <input type="text" name="" value="Popularité">
+    <div class="">
+      <h3>Genres</h3>
+      <?php foreach ($gennnres as $g) { ?>
+        <input type="checkbox" name="genres[]" value="<?php echo $g; ?>"><span><?php echo $g; ?></span>
+      <?php } ?>
+    </div>
+
+    <div class="">
+      <select class="" name="annee">
+        <option value=""></option>
+        <option value="1880-1900">1980 - 1900</option>
+        <option value="1900-1910">1900 - 1910</option>
+        <option value="1910-1930">1910 - 1930</option>
+        <option value="1930-1950">1930 - 1950</option>
+      </select>
+    </div>
+
+
+    <!-- <select class="" name="popularite">
+      utilisation de explode avec between
+      <option value=""></option>
+      <option value="0-20">de 0 à 20</option>
+      <option value="20-50">de 20 à 50</option>
+      <option value="50-100">de 50 à 100</option>
+    </select> -->
   </div>
+  <input type="submit" name="submitted" value="recherche">
+  </form>
 
  </div>
 </section>

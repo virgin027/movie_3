@@ -40,6 +40,8 @@ function valideText($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
       }
   }
 
+  return $error;
+
 }
 
 
