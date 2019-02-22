@@ -2,19 +2,19 @@
 include('inc/combi.php');
 
 if (!empty($_GET['slug']) ) {
-  $slug = $_GET['slug'];
-  $movie = getMovieBySlug($slug);
-  if(!empty($movie)) {
+ $slug = $_GET['slug'];
+ $movie = getMovieBySlug($slug);
+ if(!empty($movie)) {
 
-  } else {
-    die('404');
-  }
+ } else {
+   die('404');
+ }
 } else {
-  die('404');
+ die('404');
 }
 
- include('inc/header.php'); ?>
- <div class="wrap">
+include('inc/header.php'); ?>
+<div class="wrap">
 
    <h1><?php echo $movie['title']; ?>
    <p class="annee" name="annee"><?php echo $movie['year'];?></p>
@@ -25,9 +25,11 @@ if (!empty($_GET['slug']) ) {
    <p class="real" name="plot"><?php echo $movie['plot']; ?></p>
    <img src="posters/<?php echo $movie['id']; ?>.jpg">
 
+   <input type="submit" name="submitted" value="Ajouter à ma selection">
 
-  <?php
-  include('inc/footer.php');
 
-  ?>
+ <?php
+ include('inc/footer.php');
+
+ ?>
 </div>

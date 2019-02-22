@@ -3,10 +3,8 @@
 
 //print_r($_SESSION);===> mettre cession start dans pdo pour avoir array()
 
-
-
-$error = [];
-$users = [];
+$error = array();
+$users = array();
 ///formulaire soumis
 
 if (!empty($_POST['submitided'])) {
