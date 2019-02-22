@@ -20,14 +20,18 @@ if(!empty($_POST['submitted'])) {
     $popularity = trim(strip_tags($_POST['popularity']));
 
     // validation des champs
-    $error = valideText2($error,$title,'title','titre', 1,100);
-    $error = valideText2($error,$genres,'genres','genres', 1,100,false);
-    $error = valideText2($error,$plot,'plot','plot', 1,100,false);
-    $error = valideText2($error,$directors,'directors','Réalisateur', 1,100,false);
-    $error = valideText2($error,$cast,'cast','cast', 1,100,false);
-    $error = valideText2($error,$writers,'writers','Auteur', 1,100,false);
-    $error = valideText2($error,$mpaa,'mpaa','mpaa', 1,100,false);
-
+    $error = valideText($error,$title,'title','titre', 1,100);
+    $error = valideText($error,$genres,'genres','genres', 1,100,false);
+    $error = valideText($error,$plot,'plot','plot', 1,100,false);
+    $error = valideText($error,$directors,'directors','Réalisateur', 1,100,false);
+    $error = valideText($error,$cast,'cast','cast', 1,100,false);
+    $error = valideText($error,$writers,'writers','Auteur', 1,100,false);
+    $error = valideText($error,$mpaa,'mpaa','mpaa', 1,100,false);
+    if(!empty($_POST['year'])) {
+        if(!is_numeric($_POST['year']) || strlen($_POST['year']) != 4 ) {
+            $error['year'] = "Veuiller entrer une année avec 4 chiffres SVP";
+        }
+    }
     // REPRENDRE ICI AVEC LA VALIDATION DE YEAR,RUNTIME,RATING,POPULARITY
 
 
@@ -35,8 +39,6 @@ if(!empty($_POST['submitted'])) {
             //$slug = ???
 
             // INSERT INTO
-
-
 }
 
 include('inc/header-back.php'); ?>

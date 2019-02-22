@@ -26,6 +26,7 @@ function slugify($text)
   return $text;
 }
 
+
 function valideText($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
 {
   if (!empty($value)){
@@ -39,7 +40,7 @@ function valideText($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
          $error[$key] = 'Veuillez entrer un '.$text;
       }
   }
-
+  return $error;
 }
 
 
