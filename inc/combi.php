@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('inc/accueil_function.php');
 include('inc/fonctions.php');
 include('inc/request.php');
