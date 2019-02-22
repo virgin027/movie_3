@@ -27,7 +27,11 @@ if(!empty($_POST['submitted'])) {
     $error = valideText($error,$cast,'cast','cast', 1,100,false);
     $error = valideText($error,$writers,'writers','Auteur', 1,100,false);
     $error = valideText($error,$mpaa,'mpaa','mpaa', 1,100,false);
-
+    if(!empty($_POST['year'])) {
+        if(!is_numeric($_POST['year']) || strlen($_POST['year']) != 4 ) {
+            $error['year'] = "Veuiller entrer une année avec 4 chiffres SVP";
+        }
+    }
     // REPRENDRE ICI AVEC LA VALIDATION DE YEAR,RUNTIME,RATING,POPULARITY
 
 
@@ -35,8 +39,6 @@ if(!empty($_POST['submitted'])) {
             //$slug = ???
 
             // INSERT INTO
-
-
 }
 
 include('inc/header-back.php'); ?>
