@@ -80,28 +80,27 @@ if (!empty($_POST['submitided'])) {
    if (count($error)== 0) {
   // echo $password;
   //  }
-
   /////// mot de passe
-  $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-  $token = generateRandomString(100);
-  $role = 'user';
-  //INSERT INTO
-  $sql = "INSERT INTO users
-          (pseudo,email, password,token,created_at,roles)
-          VALUES (:pseudo,:email, :password,'$token',NOW(),'$role')";
-  $query= $pdo->prepare($sql);
-  $query->bindValue(':email',$email,PDO::PARAM_STR);
-  $query->bindValue(':pseudo',$pseudo,PDO::PARAM_STR);
-  $query->bindValue(':password',$hashedPassword,PDO::PARAM_STR);
-  // // execution de la requête
-   $query->execute();
-   //redirection vers la page dashboard
-   header('Location: index.php');
-   exit;
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $token = generateRandomString(100);
+    $role = 'user';
+    //INSERT INTO
+    $sql = "INSERT INTO users
+            (pseudo,email, password,token,created_at,roles)
+            VALUES (:pseudo,:email, :password,'$token',NOW(),'$role')";
+    $query= $pdo->prepare($sql);
+    $query->bindValue(':email',$email,PDO::PARAM_STR);
+    $query->bindValue(':pseudo',$pseudo,PDO::PARAM_STR);
+    $query->bindValue(':password',$hashedPassword,PDO::PARAM_STR);
+    // // execution de la requête
+     $query->execute();
+     //redirection vers la page dashboard
+    header('Location: login.php');
+     exit;
 
-    }
+      }
 
-}
+  }
 ///////// dans fichier fonction ====> fonction base de donnée
 
 
@@ -110,7 +109,7 @@ if (!empty($_POST['submitided'])) {
 
 include('inc/header.php');?>
 
-<h1 align="center">Inscription</h1>
+
 
    <form class="" action="" method="post" >
 
@@ -139,7 +138,7 @@ include('inc/header.php');?>
       <input type="submit" name="submitided" class="btn btn-primary" value="Envoyer !" />
 
    </form>
-   
+
 
 
 <?php include('inc/footer.php');
