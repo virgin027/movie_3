@@ -11,6 +11,7 @@
 <body>
 
     <header>
+      <?php //print_r($_SESSION) ?>
        <div class="wrap">
            <h1><a class="logo" href="index.php">MOVIE 3</a></h1>
            <div class="clear"></div>
@@ -18,20 +19,19 @@
                <ul>
                    <li><a href="index.php">Accueil</a></li>
                    <li><a href="contact.php">Contact</a></li>
-                   <?php if(!isLogged()) { ?>
+                  <?php if(!isLogged()) { ?>
+                       <li><a href="inscription.php">Inscription</a></li>
 
-                   <li><a href="inscription.php">Inscription</a></li>
-
-                   <li><a href="login.php">Connexion</a></li>
+                       <li><a href="login.php">Connexion</a></li>
                     <?php }else{ ?>
-                    <li><a href="profil.php">Profil</a></li>
-
-                    <li style="color:white;">bonjour <?php echo $_SESSION['users']['pseudo']; ?></li>
+                      <li><a href="profil.php">Profil</a></li>
+                      <li style="color:white;">bonjour <?php echo $_SESSION['users']['pseudo']; ?></li>
+                      <li><a href="deconnexion.php">Deconnexion</a></li>
+                      <?php if(isAdmin()) { ?>
+                        <li><a href="admin/index.php">Back-office</a></li>
+                      <?php } ?>
                   <?php } ?>
-                  <li><a href="deconnexion.php">Deconnexion</a></li>
-                   <?php if(!isAdmin()) { ?>
-                   <li><a href="admin/index.php">Back-office</a></li>
-                   <?php } ?>
+
                </ul>
            </nav>
        </div>

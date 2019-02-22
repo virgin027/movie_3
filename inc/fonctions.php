@@ -27,7 +27,11 @@ function slugify($text)
 }
 
 
+<<<<<<< HEAD
 function valideText2($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
+=======
+function valideText($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
+>>>>>>> 770e224d49ee44a6e9529df543535a3239042965
 {
   if (!empty($value)){
       if(mb_strlen($value) < $min ) {
@@ -41,7 +45,12 @@ function valideText2($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
       }
   }
   return $error;
+<<<<<<< HEAD
 }
+=======
+  }
+
+>>>>>>> 770e224d49ee44a6e9529df543535a3239042965
 
 
 /////// pour le MP enregistrer dans base de donnée===> inscription hachage du mot de passe
@@ -53,5 +62,8 @@ function generateRandomString($length = 100) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     return $randomString;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 770e224d49ee44a6e9529df543535a3239042965
 }
