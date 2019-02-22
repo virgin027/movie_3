@@ -25,7 +25,13 @@ include('inc/header.php'); ?>
    <p class="real" name="plot"><?php echo $movie['plot']; ?></p>
    <img src="posters/<?php echo $movie['id']; ?>.jpg">
 
-   <input type="submit" name="submitted" value="Ajouter à ma selection">
+   <?php if(isLogged()) { ?>
+     <form action="addmovieuser.php" method="post">
+       <input type="hidden" name="idmovie" value="<?php echo $movie['id']; ?>">
+       <input type="submit" name="submitted" value="Ajouter à ma selection">
+     </form>
+   <?php } ?>
+
 
 
  <?php
