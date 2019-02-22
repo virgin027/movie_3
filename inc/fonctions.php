@@ -26,7 +26,10 @@ function slugify($text)
   return $text;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dac8eaad9541fa6b82d5da8e95c8c6cf7d6238e5
 function valideText($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
 {
   if (!empty($value)){
@@ -40,7 +43,11 @@ function valideText($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
          $error[$key] = 'Veuillez entrer un '.$text;
       }
   }
+<<<<<<< HEAD
   return $error;
+=======
+
+>>>>>>> dac8eaad9541fa6b82d5da8e95c8c6cf7d6238e5
 }
 
 

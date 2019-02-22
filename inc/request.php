@@ -9,7 +9,16 @@ function getMovieBySlug($slug){
   $query->execute();
   return $query->fetch();
 }
-
+function getMovieById($id)
+{
+  global $pdo;
+  $sql = "SELECT * FROM movies_full WHERE id = :id";
+  $query = $pdo->prepare($sql);
+  $query->bindValue(':id',$id,PDO::PARAM_INT);
+  $query->execute();
+  $data = $query->fetch();
+  return $data;
+}
 
 
 
@@ -25,16 +34,7 @@ function getMovieBySlug($slug){
 //   $data = $query->fetchAll();
 //   return $data;
 // }
-// function getArticlebyId($id)
-// {
-//   global $pdo;
-//   $sql = "SELECT * FROM articles WHERE id = :id";
-//   $query = $pdo->prepare($sql);
-//   $query->bindValue(':id',$id,PDO::PARAM_INT);
-//   $query->execute();
-//   $data = $query->fetch();
-//   return $data;
-// }
+
 
 // function countArticles($status = 'all')
 // {
