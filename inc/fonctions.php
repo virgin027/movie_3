@@ -40,7 +40,7 @@ function valideText($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
       }
   }
 
-
+}
 
 
 /////// pour le MP enregistrer dans base de donnée===> inscription hachage du mot de passe
@@ -52,4 +52,4 @@ function generateRandomString($length = 100) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     return $randomString;
-};
+}

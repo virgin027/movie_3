@@ -1,7 +1,9 @@
 <?php
+include('../vendor/autoload.php');
 include('../inc/pdo.php');
 include('../inc/fonctions.php');
 include('../inc/request.php');
+use JasonGrimes\Paginator;
 
 
 // ICI METTRE EN PLACE PAGINATION
