@@ -4,6 +4,8 @@ include('../inc/fonctions.php');
 include('../inc/request.php');
 
 
+// ICI METTRE EN PLACE PAGINATION
+
 
 // on recupère les films dans la BDD
 $sql = "SELECT * FROM movies_full
@@ -43,8 +45,6 @@ include('inc/header-back.php'); ?>
     <?php } ?>
   </tbody>
 </table>
-
-
 
 
 

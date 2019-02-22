@@ -10,29 +10,38 @@ function slugify($text)
 {
   // replace non letter or digits by -
   $text = preg_replace('~[^\pL\d]+~u', '-', $text);
-
   // transliterate
   $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
-
   // remove unwanted characters
   $text = preg_replace('~[^-\w]+~', '', $text);
-
   // trim
   $text = trim($text, '-');
-
   // remove duplicate -
   $text = preg_replace('~-+~', '-', $text);
-
   // lowercase
   $text = strtolower($text);
-
   if (empty($text)) {
     return 'n-a';
   }
-
   return $text;
 }
 
+<<<<<<< HEAD
+function valideText($error,$value,$key,$text,$min = 2,$max = 100,$empty = true)
+{
+  if (!empty($value)){
+      if(mb_strlen($value) < $min ) {
+        $error[$key] = 'Votre '.$text.' est trop court. (minimum '.$min.' caractères)';
+      } elseif(mb_strlen($value) > $max) {
+        $error[$key] = 'Votre '.$text.' est trop long.';
+      }
+  } else {
+      if($empty) {
+         $error[$key] = 'Veuillez entrer un '.$text;
+      }
+  }
+  return $error;
+=======
 
 
 
@@ -45,4 +54,5 @@ function generateRandomString($length = 100) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     return $randomString;
+>>>>>>> 01a0df9790673a1eaf5ccc2a60cc596a9f4992c8
 }
