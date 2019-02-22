@@ -24,7 +24,8 @@ function voirFilmFavoris($id_user) {
 	$sql = "SELECT f.id AS idnote, m.title AS title,m.id AS id, m.year,directors FROM user_note AS f
 				LEFT JOIN movies_full AS m
 				ON f.id_movie = m.id
-				WHERE id_user = $id_user";
+				WHERE id_user = $id_user
+        AND note IS NULL";
 
 	$query = $pdo->prepare($sql);
 	$query->execute();
