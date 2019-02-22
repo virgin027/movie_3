@@ -5,13 +5,13 @@
 // @return bool
 
 function isLogged() {
-  if (!empty($_SESSION['user']['id'])) {
-    if (is_numeric($_SESSION['user']['id'])) {
-      if (!empty($_SESSION['user']['pseudo'])) {
-        if (!empty($_SESSION['user']['email'])) {
-          if (!empty($_SESSION['user']['roles'])) {
-            if (!empty($_SESSION['user']['ip'])) {
-              if ($_SESSION['user']['ip'] == $_SERVER['REMOTE_ADDR']) {
+  if (!empty($_SESSION['users']['id'])) {
+    if (is_numeric($_SESSION['users']['id'])) {
+      if (!empty($_SESSION['users']['pseudo'])) {
+        if (!empty($_SESSION['users']['email'])) {
+          if (!empty($_SESSION['users']['roles'])) {
+            if (!empty($_SESSION['users']['ip'])) {
+              if ($_SESSION['users']['ip'] == $_SERVER['REMOTE_ADDR']) {
                 return true;
               }
             }
@@ -29,7 +29,7 @@ function isLogged() {
 
 function isAdmin() {
   if (isLogged()) {
-    if ($_SESSION['user']['roles'] == 'admin') {
+    if ($_SESSION['users']['roles'] == 'admin') {
       return true;
     }
   }
